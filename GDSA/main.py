@@ -83,7 +83,7 @@ def normalize_adj(adj):
 def aug_feature_dropout(input_feat, drop_percent=0.2):
     aug_input_feat = copy.deepcopy(input_feat)
     drop_feat_num = int(aug_input_feat.shape[1] * drop_percent)
-    drop_idx = random.sample([i for i in range(aug_input_feat.shape[1])], drop_feat_num)  # 列表解析式，在指定整行的特征量的范围内生成自定义的数值个数
+    drop_idx = random.sample([i for i in range(aug_input_feat.shape[1])], drop_feat_num)  
     aug_input_feat[:, drop_idx] = 0
 
     return aug_input_feat
